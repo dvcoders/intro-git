@@ -13,7 +13,7 @@ Do so like this:
 
 `$ git config --global user.name "Lord Vader"`
 
-`git config --global user.email lordvader@deathstar.mil`
+`git config --global user.email vader@deathstar.mil`
 
 The `--global` flag tells git that you want your **name** and **email address** to be the same across all of the repositories you work in, not just the current one.
 
@@ -89,7 +89,7 @@ Great, now we added the changes to `destroy.js` to Git's tracking. Next time you
 ### Committing
 Great, we've made changes and added them, time to package them into commit with a description.
 
-Note: first commits are always called "Initial commit:
+**Note**: first commits are always called "Initial commit:
 
 ```
 $ git commit -m "Initial commit"
@@ -117,19 +117,42 @@ Then go through the adding the changes (above), and the commit them like we just
 
 This time write a **different commit message**. It should describe what changes you've made.
 
+### History
+
+So we've made a few commits. Now let's browse them to see what we changed.
+
+Fortunately for us, there's `git log`. Think of Git's log as a journal that remembers all the changes we've committed so far, in the order we committed them. Try running it now:
+
+```
+$ git log
+commit 3ef1ee7e39dc69a5e14119a0cca6d951b5e86c95
+Author: Lord Vader <vader@deathstar.mil>
+Date:   In a galaxy far, far away
+
+    Tell em' who their daddy is!
+
+commit 6323231533dcee3e9f80cc20f99dc991d4e2e34f
+Author: Lord Vader <vader@deathstar.mil>
+Date:   A long time ago
+
+    Initial Commit
+```
+
 ### Linking to a Remote (Github)
 
-Up until now, the work we've been doing has been on our local computer, nothing has left our little folder... time to change that.
+Up until now, the work we've been doing has been on our local computer, nothing has left our little repository... time to change that.
 
 We're going to assume you have a [Github](https://github.com/) account. Sign in now or make one.
 
-Now, on Github **make a new repo with the same name as our directory** - "deathstar"
+Now, on Github **make a new repo with the same name as our directory** - `deathstar`
 
-[You should see something like this](./empty-repository.png)
+You should see something like this...
 
-Thankfully, Github has been nice and explained how we can link our folder and this one (remote) together.
+![](./empty-repository.png)
 
-First we'll add the URL of this repository to our local folder, and name it `origin` with this command:
+Thankfully, Github has been nice and explained how we can link our local repository and this one (remote repository) together.
+
+First we'll add the URL of this repository to our local repository, and name it `origin` with this command:
 
 `$ git remote add origin https://github.com/YOUR_USERNAME/deathsar.git`
 
@@ -194,7 +217,7 @@ Checking connectivity... done.
 Congrats Dev B, you just clone Dev A's work! Now `cd` into the repo and open up `destroy.js`... You should see Dev A's print statement at the end:
 
 ```js
-console.log('I\'m not actually, my name is <DEV-A-NAME>...')
+console.log('I\'m not actually, my name is <DEVELOPER-A-NAME>...')
 ```
 
 ##### - Pushing to Dev A's Repo
@@ -209,11 +232,13 @@ Edit the `destroy.js` to print whatever you'd like (try to be nice :P)
 If you need help, there are mentors around the room ready to help you
 
 ##### - Pulling Dev B's Additions
-Your turn Dev A. So your friend and made a commit to your repo, awesome! 
+Your turn Dev A. 
+
+So your friend and made a commit to your repo, awesome! 
 
 But how do you get those changes onto your local repository? With **pulling**. Pulling is simply the opposite of pushing (duh!) - it means there are things on the remote you don't have which you want, so you **pull them down to your computer**.
 
-Here's visualization:
+Here's visualization...
 
 ![](https://illustrated-git.readthedocs.org/en/latest/_images/git-flows.svg)
 
