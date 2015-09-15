@@ -295,14 +295,14 @@ Both Dev A and Dev B should make their own branches:
 
 ```
 # Dev A
-$ git checkout -b feature/<DEVELOPER_A_NAME>           <-"jake" for example
-Switched to a new branch 'feature/<DEVELOPER_A_NAME>'
+$ git checkout -b <DEVELOPER_A_NAME>           <-"jake" for example
+Switched to a new branch '<DEVELOPER_A_NAME>'
 ```
 
 ```
 # Dev B
-$ git checkout -b feature/<DEVELOPER_B_NAME>
-Switched to a new branch 'feature/<DEVELOPER_B_NAME>'
+$ git checkout -b <DEVELOPER_B_NAME>
+Switched to a new branch '<DEVELOPER_B_NAME>'
 ```
 
 The command `$ git checkout -b branch-name` creates a branch and simultaneously switch to it.
@@ -313,7 +313,7 @@ We can see that we made the branch successfully by asking Git to list the branch
 
 ```
 $ git branch -a 
-*feature/<YOUR_NAME>
+*<YOUR_NAME>
 master
 remote/origin/master
 ```
@@ -330,7 +330,7 @@ Dev B add the following to `destroy.js`
 console.log('Blowing up planets is FUN! Give me another one!');
 ```
 
-Both Devs add, commit, and push like so `$ git push origin feature/<YOUR_NAME>`
+Both Devs add, commit, and push like so `$ git push origin <YOUR_NAME>`
 
 Now check the Github repo and you should see `3 branches` at the top.
 
