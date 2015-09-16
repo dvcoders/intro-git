@@ -334,6 +334,57 @@ Both Devs add, commit, and push like so `$ git push origin <YOUR_NAME>`
 
 Now check the Github repo and you should see `3 branches` at the top.
 
+#### Practice Merging Branches
+
+Now let's try merging those branches back to `master`. 
+
+Dev A should go to the repository on Github, switch to their branch, and click on a green square button that looks like a cycle. From there you should see a header saying "Open a pull request" and a green check indicating you are "able to merge."
+
+Add a description: `Scold Vader for blowing up planets`.
+
+Next assign someone to review the code before it is merged back to `master`. Click on the logo next to assignee, and add Dev B as the assignee. Now create the pull request.
+
+Now, Dev B can go on Github, click on pull requests on the right side of the repository, and look at Dev A's code. If it looks good, Dev B can leave a comment like 🚀 indicating you can ship it.
+
+Dev A, now that Dev B has reviewed your code, go back to the pull request, and click `Merge pull request`. Github will let you know you can know delete your branch -- all its new code is now in master.
+
+Dev B, now you should open a pull request on *your* branch. Everything should be the same as when Dev A opened a pull request *except* Github will let you know you "can't automatically merge." That's ok, assign Dev A to review your code, open the pull request, and wait for Dev A to comment saying your code is good to go.
+
+Now, when you're ready to merge, checkout the branch and make sure it is up-to-date with the remote branch, in case anyone has made any changes:
+
+`git checkout dev-b-branch-name`
+
+`git pull origin dev-b-branch-name`
+
+Now `git checkout master` so you can merge your branch.
+
+`git merge --no-ff testbranch2`
+
+You should see something along these lines:
+
+```
+CONFLICT (content): Merge conflict in destroy.js
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+To "fix the conflicts" open destroy.js. Git has nicely indicated with `<<<<<<< HEAD`, `=======`, and `>>>>>>> dev-b-branch-name` what the differences between the master, and dev B's branch are. Maybe you want to keep both the "scold vader" message and the "destruction crazed response." To do so, delete the lines git added for you, and keep both message lines. Save the file.
+
+Now back to git. If you run `git status` right now, it should tell you you have unmerged paths, and that destroy.js is modified for both branches.
+
+`git add destroy.js`
+
+Create a commit indicating your merge:
+
+`git commit -m "dev-b-branch-name to master"`
+
+And now you're done merging! Locally, that is. Push those changes to github.
+
+`git push origin master`
+
+If you go to the pull request now, github should tell you the pull request was successful, and you can delete dev B's branch.
+
+Now if you look at your repository on github you should see there is only one branch -- master.
+
 --
 ### Merging, Pull Request, and Forking Demo
 Speakers give demo on merging branches, Github Flow, and Forking.
