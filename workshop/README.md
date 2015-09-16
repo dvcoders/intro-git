@@ -356,7 +356,11 @@ Now, when you're ready to merge, checkout the branch and make sure it is up-to-d
 
 `git pull origin dev-b-branch-name`
 
-Now `git checkout master` so you can merge your branch.
+Now `git checkout master` so you can merge your branch. Do a pull there too, just to be sure everything is up to date:
+
+`git pull origin master`
+
+Now you can begin to merge:
 
 `git merge --no-ff testbranch2`
 
