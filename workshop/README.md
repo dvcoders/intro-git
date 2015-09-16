@@ -2,7 +2,7 @@
 
 Lets practice git!
 
-Following the main [README](../README.md) you should go through the installation process for your machine as well as the required `git config` commands.
+Following the main [README](../screenshots/README.md) you should go through the installation process for your machine as well as the required `git config` commands.
 
 **Note**: You'll see `$` these a lot. Don't actually type them in! They just mean you're entering a command!
 
@@ -148,7 +148,7 @@ Now, on Github **make a new repo with the same name as our directory** - `deaths
 
 You should see something like this...
 
-![](./empty-repository.png)
+![](./screenshots/empty-repository.png)
 
 Thankfully, Github has been nice and explained how we can link our local repository and this one (remote repository) together.
 
@@ -196,12 +196,12 @@ In order to practice pulling, you need to work with another person. So turn to t
 
 One person will be called "Developer A" and the other "Developer B".
 
-Dev A should **add Dev B as a collaborator** on their Github repository (https://github.com/DEVELOPER-A/deathstar.git).
+Dev-A should **add Dev-B as a collaborator** on their Github repository (https://github.com/DEVELOPER-A/deathstar.git).
 
-You can do that by going to Settings > Collaborators > Then add Dev B's username.
+You can do that by going to Settings > Collaborators > Then add Dev-B's username.
 
 ##### - Cloning Someone Else's Repository
-Dev B should now `clone` Dev A's repository on Github.
+Dev-B should now `clone` Dev-A's repository on Github.
 
 ```
 $ cd /where/you/want/to/clone/it
@@ -214,25 +214,25 @@ remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 Receiving objects: 100% (3/3), done.
 Checking connectivity... done.
 ```
-Congrats Dev B, you just clone Dev A's work! Now `cd` into the repo and open up `destroy.js`... You should see Dev A's print statement at the end:
+Congrats Dev-B, you just clone Dev-A's work! Now `cd` into the repo and open up `destroy.js`... You should see Dev-A's print statement at the end:
 
 ```js
 console.log('I\'m not actually, my name is <DEVELOPER-A-NAME>...')
 ```
 
-##### - Pushing to Dev A's Repo
-Okay Dev B, your time to shine!
+##### - Pushing to Dev-A's Repo
+Okay Dev-B, your time to shine!
 
 Edit the `destroy.js` to print whatever you'd like (try to be nice :P)
 
 - Add the changes
 - Commit the changes
-- Push the commits to the master branch on Dev A's repo
+- Push the commits to the master branch on Dev-A's repo
 
 If you need help, there are mentors around the room ready to help you
 
-##### - Pulling Dev B's Additions
-Your turn Dev A. 
+##### - Pulling Dev-B's Additions
+Your turn Dev-A. 
 
 So your friend and made a commit to your repo, awesome! 
 
@@ -258,7 +258,7 @@ Fast-forward
  1 file changed, 2 insertions(+)
 ``` 
 
-Now, Dev A, open your `destroy.js` file and you should see the additions that Dev B made!
+Now, Dev-A, open your `destroy.js` file and you should see the additions that Dev-B made!
 
 Pulling worked!
 
@@ -267,9 +267,9 @@ Branching is actually the most important feature of Git. It allows 2 or 2,000 de
 
 So we just learned the ins-and-outs of pulling and pushing our changes (or commits) to a repository.
 
-However, **what happens if Dev A decides to rename `destroy.js` to `peace-and-love.js`**?
+However, **what happens if Dev-A decides to rename `destroy.js` to `peace-and-love.js`**?
 
-Dev B will still have their file named `destory.js`. After they edit `destory.js`, add the changes, commit them, and push them, they might get this error.
+Dev-B will still have their file named `destory.js`. After they edit `destory.js`, add the changes, commit them, and push them, they might get this error.
 
 ```
 $ git push origin master
@@ -283,24 +283,24 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-Dev B is unable to push because Dev A made changes and pushed them before Dev B did. 
+Dev-B is unable to push because Dev-A made changes and pushed them before Dev-B did. 
 
-Now Dev B should try to `$ git pull` and see what happens -> a **merge error**.
+Now Dev-B should try to `$ git pull` and see what happens -> a **merge error**.
 
 **A merge conflict is the same as two people trying to write on the same line of paper at the same time**. We can avoid this by giving each person a copy of the paper and let them work on their own, this is **branching**.
 
 
 ##### - Practice Branching
-Both Dev A and Dev B should make their own branches:
+Both Dev-A and Dev-B should make their own branches:
 
 ```
-# Dev A
+# Dev-A
 $ git checkout -b <DEVELOPER_A_NAME>           <-"jake" for example
 Switched to a new branch '<DEVELOPER_A_NAME>'
 ```
 
 ```
-# Dev B
+# Dev-B
 $ git checkout -b <DEVELOPER_B_NAME>
 Switched to a new branch '<DEVELOPER_B_NAME>'
 ```
@@ -318,13 +318,13 @@ master
 remote/origin/master
 ```
 
-Dev A Add the following to `destroy.js`
+Dev-A Add the following to `destroy.js`
 
 ```js
 console.log('You really shouldn\'t blow up planets Vader');
 ```
 
-Dev B add the following to `destroy.js`
+Dev-B add the following to `destroy.js`
 
 ```js
 console.log('Blowing up planets is FUN! Give me another one!');
@@ -336,33 +336,66 @@ Now check the Github repo and you should see `3 branches` at the top.
 
 #### Practice Merging Branches
 
-Now let's try merging those branches back to `master`. 
+Now let's try merging Dev-A and Dev-B's branches back to `master`. 
 
-Dev A should go to the repository on Github, switch to their branch, and click on a green square button that looks like a cycle. From there you should see a header saying "Open a pull request" and a green check indicating you are "able to merge."
+Dev-A (your turn): Go to your repo on [github](https://github.com) and press the "Pull Request" Icon
+
+![](./screenshots/pull-request-icon.png)
+
+Now open a new Pull request
+
+![](./screenshots/new-pull-request.png)
 
 Add a description: `Scold Vader for blowing up planets`.
 
-Next assign someone to review the code before it is merged back to `master`. Click on the logo next to assignee, and add Dev B as the assignee. Now create the pull request.
+Next assign someone to review the code before it is merged back to `master`. Click on the logo next to assignee, and add Dev-B as the assignee. 
 
-Now, Dev B can go on Github, click on pull requests on the right side of the repository, and look at Dev A's code. If it looks good, Dev B can leave a comment like 🚀 indicating you can ship it.
+![](./screenshots/add-assignee.png)
 
-Dev A, now that Dev B has reviewed your code, go back to the pull request, and click `Merge pull request`. Github will let you know you can know delete your branch -- all its new code is now in master.
+"Create" the pull request.
 
-Dev B, now you should open a pull request on *your* branch. Everything should be the same as when Dev A opened a pull request *except* Github will let you know you "can't automatically merge." That's ok, assign Dev A to review your code, open the pull request, and wait for Dev A to comment saying your code is good to go.
+--
 
-Now, when you're ready to merge, checkout the branch and make sure it is up-to-date with the remote branch, in case anyone has made any changes:
+Now, Dev-B it's your turn. Go to the repo on [github](https://github.com) and click on the Pull Request icon. You will see Dev-A's Pull Request!
 
-`git checkout dev-b-branch-name`
+Review their code by looking through their **commits** and **files changed** section like so:
 
-`git pull origin dev-b-branch-name`
+![](./screenshots/pull-request-info.png)
 
-Now `git checkout master` so you can merge your branch. Do a pull there too, just to be sure everything is up to date:
 
-`git pull origin master`
+Leave a comment letting them know that you've looked it over (add 🚀 :rocket: or `:shipit:` for fun)
+
+--
+
+Awesome, the Pull request has been reviewed!
+
+Dev-A go back to the pull request, and click "Merge pull request"
+
+![](./screenshots/merge-pull-request.png)
+
+--
+
+Dev-B, **your turn to open a pull request from your branch**, follow exactly what was done, just switch roles.
+
+This time however, you will see "Can't automatically merge" displayed - Github is telling you there is a merge conflict.
+
+That's ok, assign Dev-A to review your code, open the pull request, and wait for Dev-A to comment saying your code is good to go.
+
+--
+
+Dev-A when you're ready to merge, checkout the branch and make sure it is up-to-date with the remote branch, in case anyone has made any changes:
+
+`$ git checkout dev-b-branch-name`
+
+`$ git pull origin dev-b-branch-name`
+
+`$ git checkout master` so you can merge your branch. Do a pull there too, just to be sure everything is up to date:
+
+`$ git pull origin master`
 
 Now you can begin to merge:
 
-`git merge --no-ff testbranch2`
+`$ git merge --no-ff testbranch2`
 
 You should see something along these lines:
 
@@ -371,7 +404,13 @@ CONFLICT (content): Merge conflict in destroy.js
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-To "fix the conflicts" open destroy.js. Git has nicely indicated with `<<<<<<< HEAD`, `=======`, and `>>>>>>> dev-b-branch-name` what the differences between the master, and dev B's branch are. Maybe you want to keep both the "scold vader" message and the "destruction crazed response." To do so, delete the lines git added for you, and keep both message lines. Save the file.
+To "fix the conflicts" open destroy.js.
+
+ Git has nicely indicated with `<<<<<<< HEAD`, `=======`, and `>>>>>>> dev-b-branch-name` what the differences between the master, and Dev-B's branch are. 
+ 
+Maybe you want to keep both the "Scold Vader" message and the "destruction crazed response." To do so, delete the lines (`<<`, `==`, `>>`) Git added for you, and keep both message lines. 
+
+Save the file.
 
 Now back to git. If you run `git status` right now, it should tell you you have unmerged paths, and that destroy.js is modified for both branches.
 
@@ -381,18 +420,14 @@ Create a commit indicating your merge:
 
 `git commit -m "dev-b-branch-name to master"`
 
-And now you're done merging! Locally, that is. Push those changes to github.
+And now you're done merging (locally, that is)! Push those changes to github.
 
 `git push origin master`
 
-If you go to the pull request now, github should tell you the pull request was successful, and you can delete dev B's branch.
+If you go to the pull request now, Github should tell you the pull request was successful, and you can delete Dev-B's branch.
 
-Now if you look at your repository on github you should see there is only one branch -- master.
+Now if you look at your repository on Github you should see there is only one branch -- master.
 
---
-### Merging, Pull Request, and Forking Demo
-Speakers give demo on merging branches, Github Flow, and Forking.
-
-These are features unique to Github, so demoing them on Github makes a lot of sense!
+Hooray!
 
 
