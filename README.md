@@ -16,6 +16,10 @@ This is a good to refer back to when you're using Git on your own work (because 
 
 Definitely checkout `Best Practices` and `Learning Resources` sections at the bottom for more links to useful material!
 
+### [git-condensed](./reference/git-condensed/README.md)
+
+A shorter, less in-depth version of the guide for quick reminders.
+
 ### [Workshop](./workshop/README.md)
 
 This where you can practice Git and Github by making your own repository, adding files, committing and pushing to Github!
