@@ -1,3 +1,3 @@
 Mark
 Sydney
-Mayor of Coolville for Cool Kids, Celeste
+Celeste the Mayor of Coolville for Cool Kids
