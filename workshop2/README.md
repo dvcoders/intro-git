@@ -1,3 +1,3 @@
 Mark
 Sydney
-Celeste
+Celeste the Mayor of Coolville for Cool Kids
